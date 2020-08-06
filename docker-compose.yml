@@ -13,7 +13,7 @@ services:
     working_dir: /app
     volumes: 
         - ./backend:/app
-    command: bash -c "npm i && npm start && tail -f /dev/null" 
+    command: bash -c "tail -f /dev/null" 
     depends_on: 
         - db
     environment: 
