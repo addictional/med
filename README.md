@@ -1,5 +1,5 @@
 <p align="center" >
-  Image loader
+  Записи
 </p>
 
 ## requirements
