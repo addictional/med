@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+  web:
+    build: ./frontend
+    ports:
+        - "8080:80" 
+    depends_on: 
+        - backend
+    command: bash -c "nginx && tail -f /dev/null"
+  backend:
+    image: node:12
+    working_dir: /app
+    volumes: 
+        - ./backend:/app
+    command: bash -c "npm i && npm start && tail -f /dev/null" 
+    depends_on: 
+        - db
+    environment: 
+        DB_CONNECTION : mysql://root:123456@db/med       
+  db:
+    image: mysql
+    command: mysqld --user=root
+    volumes:
+        - ./mysql-dump:/docker-entrypoint-initdb.d
+    restart: always
+    environment:
+      MYSQL_DATABASE : med  
+      MYSQL_ROOT_PASSWORD: 123456
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+        - 8081:8080

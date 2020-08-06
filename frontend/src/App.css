@@ -1,0 +1,49 @@
+.date-picker {
+  height: 24px;
+  border: 1px solid #d9d9d9;
+}
+
+.action.not-available {
+  color : goldenrod;
+}
+
+
+.action.available-record {
+  color : green;
+}
+
+.quick-form {
+  padding: 26px 15px;
+}
+
+.quick-form__fio {
+  display: block;
+}
+
+.quick-form__fio input {
+  border: 1px solid #d9d9d9;
+  margin-left: 20px;
+  width: 90%;
+}
+
+.quick-form__complaints{
+  display: block;
+  
+}
+
+.quick-form__complaints textarea{
+  border: 1px solid #d9d9d9;
+  width: 100%;
+}
+
+.main-form {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.radio-date {
+  display: inline-block;
+  margin-left: 20px;
+  width: 320px;
+}
+
